@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pallavi Cake Studio - Premium Cakes</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap');
+
+        /* Premium Color Palette */
+        :root {
+            --primary-bg: #FFF0F5; /* Soft Blush */
+            --premium-cream: #FFFAF0; /* Floral White / Ivory */
+            --text-main: #800000; /* Deep Maroon */
+            --card-bg: #ffffff;
+            --accent-gold: #D4AF37; /* Rich Gold */
+            --accent-gold-light: #F4E2A6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--text-main);
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            background-color: var(--card-bg);
+            padding: 10px 5%;
+            box-shadow: 0 4px 15px rgba(128, 0, 0, 0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header-logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-gold);
+        }
+
+        .header-brand h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* --- Premium Artistic Hero Section (No Gradient) --- */
+        .hero {
+            background-color: var(--premium-cream);
+            /* Subtle, premium dotted pattern mimicking high-end packaging */
+            background-image: radial-gradient(var(--accent-gold-light) 1.5px, transparent 1.5px);
+            background-size: 30px 30px;
+            padding: 80px 20px;
+            min-height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border-bottom: 3px solid var(--accent-gold);
+        }
+
+        /* Artistic Frame inside the Hero */
+        .art-frame {
+            background-color: var(--card-bg);
+            padding: 50px 40px;
+            border: 2px solid var(--accent-gold);
+            outline: 2px solid var(--text-main);
+            outline-offset: -12px;
+            max-width: 700px;
+            text-align: center;
+            box-shadow: 15px 15px 0px rgba(128, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .art-frame::before {
+            content: '✿';
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--accent-gold);
+            font-size: 1.5rem;
+        }
+
+        .main-logo {
+            max-width: 250px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            margin-top: 10px;
+            border: 4px solid var(--primary-bg);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .art-frame h1 {
+            font-size: 3.2rem;
+            margin-bottom: 5px;
+            color: var(--text-main);
+            line-height: 1.2;
+        }
+
+        .art-frame p.tagline {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--text-main);
+            color: white;
+            padding: 12px 35px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 1px solid var(--accent-gold);
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--accent-gold);
+            color: var(--text-main);
+            transform: scale(1.05);
+        }
+
+        /* --- Menu Sections --- */
+        .menu-section {
+            padding: 80px 5%;
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 40px;
+            color: #666;
+        }
+
+        .menu-image-container {
+            width: 100%;
+            box-shadow: 0 15px 40px rgba(128, 0, 0, 0.15);
+            border: 5px solid var(--card-bg);
+            background-color: var(--card-bg);
+        }
+
+        .menu-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- Highlights / Details Section (New) --- */
+        .highlights-section {
+            background-color: var(--text-main);
+            color: var(--primary-bg);
+            padding: 60px 5%;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .highlight-item {
+            padding: 20px;
+            border: 1px solid rgba(255, 240, 245, 0.2);
+            border-radius: 10px;
+        }
+
+        .highlight-item h3 {
+            color: var(--accent-gold);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .highlight-item p {
+            font-size: 1.1rem;
+        }
+
+        .contact-large {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+            display: block;
+            margin: 15px 0;
+            font-weight: 700;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--premium-cream);
+            color: var(--text-main);
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 2px solid var(--accent-gold);
+        }
+
+        footer a {
+            color: var(--text-main);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .header-brand h2 {
+                font-size: 1.2rem;
+            }
+            .nav-links {
+                display: none; /* Can be replaced with a hamburger menu later */
+            }
+            .art-frame {
+                padding: 30px 20px;
+                box-shadow: 8px 8px 0px rgba(128, 0, 0, 0.1);
+            }
+            .art-frame h1 {
+                font-size: 2.2rem;
+            }
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Nav -->
+    <header>
+        <div class="header-brand">
+            <img src="pallavi logo.jpeg" alt="Logo" class="header-logo">
+            <h2>Pallavi Cake Studio</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#eggless">Signature Menu</a></li>
+            <li><a href="#vegan">Vegan Menu</a></li>
+            <li><a href="#details">Order Details</a></li>
+        </ul>
+    </header>
+
+    <!-- Premium Artistic Hero Section -->
+    <section class="hero">
+        <div class="art-frame">
+            <img src="pallavi logo.jpeg" alt="Pallavi Cake Studio Logo" class="main-logo">
+            <h1>Pallavi Cake Studio</h1>
+            <p class="tagline">making every moment memorable</p>
+            <a href="#eggless" class="cta-btn">View Our Menus</a>
+        </div>
+    </section>
+
+    <!-- Eggless Menu Image Section -->
+    <section id="eggless" class="menu-section">
+        <h2 class="section-title">Premium Eggless Collection</h2>
+        <p class="section-subtitle">Crafted Fresh • Baked with Love • Customized for Every Celebration</p>
+        
+        <div class="menu-image-container">
+            <img src="menu 2.jpeg" alt="Pallavi Cake Studio Eggless Menu">
+        </div>
+    </section>
+
+    <!-- Vegan Menu Image Section -->
+    <section id="vegan" class="menu-section" style="padding-top: 20px;">
+        <h2 class="section-title">Vegan Cake Menu</h2>
+        <p class="section-subtitle">All-Natural & Dairy-Free</p>
+        
+        <div class="menu-image-container">
+            <img src="menu 3.jpeg" alt="Pallavi Cake Studio Vegan Menu">
+        </div>
+    </section>
+
+    <!-- NEW: Highlights & Contact Details Section -->
+    <section id="details" class="highlights-section">
+        <h2 style="font-size: 2.5rem; margin-bottom: 50px;">The Pallavi Promise</h2>
+        
+        <div class="highlights-grid">
+            <!-- Quality Block -->
+            <div class="highlight-item">
+                <h3>100% Eggless</h3>
+                <p>Homemade & Freshly Baked. <br>We guarantee premium quality in every bite of our dairy-free and eggless creations.</p>
+            </div>
+
+            <!-- Customization Block -->
+            <div class="highlight-item">
+                <h3>Customised For You</h3>
+                <p>Customise cakes are available!<br><em>Also available: Jar Cakes, Cupcakes & Bowl Cakes.</em></p>
+                <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">*Place order at least 24-48 hrs in advance.</p>
+            </div>
+
+            <!-- Contact Block -->
+            <div class="highlight-item">
+                <h3>Order Now</h3>
+                <p>Kindly DM or Call us on:</p>
+                <span class="contact-large">90811 93640</span>
+                <p>📍 Ahmedabad</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h2 style="font-size: 1.8rem; margin-bottom: 10px;">Connect With Us</h2>
+        <p>Follow us on Instagram for our latest sweet creations:</p>
+        <p style="margin-top: 10px; font-size: 1.2rem;">
+            <a href="https://instagram.com/pallavi_cake_studio" target="_blank">@PALLAVI_CAKE_STUDIO</a>
+        </p>
+        <p style="margin-top: 30px; font-size: 0.9rem; opacity: 0.8;">© 2026 Pallavi Cake Studio. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
